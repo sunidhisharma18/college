@@ -38,7 +38,7 @@ void main()
 					break;
 		}
 		fflush(stdin);
-		printf("\nEnter the choice :");
+		printf("\n do u want to continue :");
 		scanf("%c",&ch);
 		}while(ch=='y'||ch=='Y');
 		getch();
@@ -65,7 +65,6 @@ void main()
 		int display()
 		{
 			int i;
-			clrscr();
 			for(i=0;i<2;i++)
 			{
 				printf(" Books %d :",i+1);
@@ -78,16 +77,18 @@ void main()
 		}
 		int author()
 		{
-			int i;
+			int i,temp=0;
 			char n[20];
 			clrscr();
 			printf( "\nEnter author name :");
+				fflush(stdin);
 			gets(n);
-			fflush(stdin);
+
 			for(i=0;i<2;i++)
 			{
-					strcmp("m","b[i].author");
+				   if(strcmp(n,b[i].author)==0)
 					{
+						temp++;
 						printf(" Book are : ",b[i].name);
 					}
 				}
@@ -95,24 +96,24 @@ void main()
 			}
 		int title()
 		{
-			int i;
-			char n[20];
+			int i,temp=0;
+			char m[20];
 			clrscr();
-			fflush(stdin);
 			printf( "\nEnter title name :");
-			gets(n);
 			fflush(stdin);
+			gets(m);
+
 			for(i=0;i<2;i++)
-			{
-				strcmp("n","b[i].name");
-				printf(" Book is :",b[i].name);
-			}
+			{   if(strcmp(m,b[i].name)==0)
+					{
+						temp++;
+						printf(" Book is :",b[i].name);
+			}          }
 			return 0;
 		}
 		int count()
 		{
 			int i,p=0;
-			clrscr();
 			for(i=0;i<2;i++)
 			{
 				p++;
