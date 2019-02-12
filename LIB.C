@@ -51,9 +51,9 @@ void main()
 			{
 					fflush(stdin);
 					printf("\nEnter book name :");
-					gets(b[i].name);
+					scanf("%s",&b[i].name);
 					printf("\nEnter author :");
-					gets(b[i].author);
+					scanf("%s",&b[i].author);
 					fflush(stdin);
 					printf("\nEnter id:");
 					scanf("%d",&b[i].id);
@@ -67,19 +67,19 @@ void main()
 			int i;
 			for(i=0;i<2;i++)
 			{
-				printf(" Books %d :",i+1);
+				printf(" \nBooks %d  :-",i+1);
 				printf(" \nName : %s",b[i].name);
 				printf(" \nAuthor : %s",b[i].author);
 				printf(" \nId : %d ",b[i].id);
 				printf(" \nCost : %d",b[i].cost);
 			}
+			getch();
 			return 0;
 		}
 		int author()
 		{
-			int i,temp=0;
+			int i;
 			char n[20];
-			clrscr();
 			printf( "\nEnter author name :");
 				fflush(stdin);
 			gets(n);
@@ -88,27 +88,44 @@ void main()
 			{
 				   if(strcmp(n,b[i].author)==0)
 					{
-						temp++;
-						printf(" Book are : ",b[i].name);
+						printf(" \nBook : %s ",b[i].name);
+
 					}
+					else
+					{
+						printf("\n Book not found");
+						break;
+					}
+
 				}
+				getch();
+
 			return 0;
 			}
 		int title()
 		{
-			int i,temp=0;
+			int i;
 			char m[20];
-			clrscr();
 			printf( "\nEnter title name :");
 			fflush(stdin);
 			gets(m);
-
 			for(i=0;i<2;i++)
-			{   if(strcmp(m,b[i].name)==0)
+			{
+					if(strcmp(m,b[i].name)==0)
 					{
-						temp++;
-						printf(" Book is :",b[i].name);
-			}          }
+
+						printf("\n Book is : %s",b[i].name);
+
+					}
+					else
+					{
+						printf("book not found\n");
+						break;
+					}
+
+			}
+			getch();
+			clrscr();
 			return 0;
 		}
 		int count()
@@ -118,8 +135,7 @@ void main()
 			{
 				p++;
 			}
-			fflush(stdin);
-			printf("\n No.of book :",p);
+			printf("\n No.of book :%d",p);
 			return 0;
 		}
 
